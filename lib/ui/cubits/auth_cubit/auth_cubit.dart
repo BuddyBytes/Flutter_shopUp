@@ -52,9 +52,11 @@ class AuthCubit extends Cubit<AuthState> {
     required String token,
     required BuildContext context,
   }) async {
-    await CachedPreference.clearKey(key: token).then((value){
-      LayoutCubit.getInstance(context).currentScreenIndex = 0;
-    });
+    await CachedPreference.clearKey(key: token).then(
+      (value) {
+        LayoutCubit.getInstance(context).currentScreenIndex = 0;
+      },
+    );
     emit(EndAuthState());
   }
 
