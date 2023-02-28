@@ -58,19 +58,8 @@ class AuthenticationApiCall {
         return response.data;
       }
     } catch (e) {
-      print(e);
     }
     return {};
   }
 }
 
-void main(List<String> args) async {
-  AuthenticationApiCall.authenticationInit();
-  final result = await AuthenticationApiCall.postRegisterData(
-    email: "bertold@gmail.com",
-    password: "walid12",
-    name: "bertoldaot",
-    phone: "212650221",
-  );
-  print(result);
-}
