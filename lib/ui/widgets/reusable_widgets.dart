@@ -9,12 +9,14 @@ Widget defaultFormField(
   required TextEditingController formController,
   required Icon formIcon,
   required bool showSuffixIcon,
+  bool isEnabled = false
 }) {
   return TextFormField(
     obscureText: isObscure,
     cursorColor: Colors.black,
     controller: formController,
     decoration: InputDecoration(
+      enabled: isEnabled,
       suffixIcon: showSuffixIcon ? IconButton(
         onPressed: () {
           

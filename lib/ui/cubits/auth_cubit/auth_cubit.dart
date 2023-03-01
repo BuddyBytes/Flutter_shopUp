@@ -15,6 +15,7 @@ class AuthCubit extends Cubit<AuthState> {
     return BlocProvider.of(context);
   }
 
+  AuthModel? registerModel;
   void authRequest({
     required String email,
     required String password,
@@ -25,6 +26,7 @@ class AuthCubit extends Cubit<AuthState> {
         email: email,
         password: password,
       ).then((value) {
+        registerModel = AuthModel.fromAuthResponse(value);
         if (AuthModel.fromAuthResponse(value).message == null) {
           emit(ErrorServerAuthState());
         } else {

@@ -16,8 +16,15 @@ class Layouts extends StatelessWidget {
       builder: (context, state) {
         final instance = LayoutCubit.getInstance(context);
         return Scaffold(
+          resizeToAvoidBottomInset: false,
           appBar: AppBar(
-            title: const Text("ShopUp"),
+            title: const Text(
+              "ShopUp",
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 20
+              ),
+            ),
           ),
           body: instance.screensNav[instance.currentScreenIndex],
           bottomNavigationBar: BottomNavigationBar(
@@ -27,21 +34,13 @@ class Layouts extends StatelessWidget {
             currentIndex: instance.currentScreenIndex,
             items: const [
               BottomNavigationBarItem(
-                icon: Icon(Icons.home),
-                label: 'Products'
-              ),
+                  icon: Icon(Icons.home), label: 'Products'),
               BottomNavigationBarItem(
-                icon: Icon(Icons.search),
-                label: 'Search'
-              ),
+                  icon: Icon(Icons.search), label: 'Search'),
               BottomNavigationBarItem(
-                icon: Icon(Icons.favorite_outline),
-                label: 'Favorites'
-              ),
+                  icon: Icon(Icons.favorite_outline), label: 'Favorites'),
               BottomNavigationBarItem(
-                icon: Icon(Icons.settings_outlined),
-                label: 'Settings'
-              ),
+                  icon: Icon(Icons.settings_outlined), label: 'Settings'),
             ],
           ),
         );

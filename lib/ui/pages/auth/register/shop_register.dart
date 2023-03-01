@@ -49,6 +49,7 @@ class Register extends StatelessWidget {
             ),
             defaultFormField(
               false,
+              isEnabled: true,
               showSuffixIcon: false,
               hintText: "Email Address",
               formController: emailController,
@@ -59,6 +60,7 @@ class Register extends StatelessWidget {
             ),
             defaultFormField(
               false,
+              isEnabled: true,
               showSuffixIcon: false,
               hintText: "Username",
               formController: nameController,
@@ -71,6 +73,7 @@ class Register extends StatelessWidget {
             ),
             defaultFormField(
               true,
+              isEnabled: true,
               showSuffixIcon: true,
               hintText: "Confirm-password",
               formController: passwordController,
@@ -83,6 +86,7 @@ class Register extends StatelessWidget {
             ),
             defaultFormField(
               false,
+              isEnabled: true,
               showSuffixIcon: false,
               hintText: "Phone Number",
               formController: phoneController,

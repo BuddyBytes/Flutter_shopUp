@@ -40,6 +40,7 @@ class ShopLogin extends StatelessWidget {
             ),
             defaultFormField(
               false,
+              isEnabled: true,
               showSuffixIcon: false,
               hintText: "Email Address",
               formController: emailController,
@@ -50,6 +51,7 @@ class ShopLogin extends StatelessWidget {
             ),
             defaultFormField(
               true,
+              isEnabled: true,
               showSuffixIcon: true,
               hintText: "Password",
               formController: passwordController,
