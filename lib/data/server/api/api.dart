@@ -37,7 +37,6 @@ class AuthenticationApiCall {
     return {};
   }
 
-
   static Future<Map<String, dynamic>> postRegisterData({
     required String email,
     required String password,
@@ -47,19 +46,17 @@ class AuthenticationApiCall {
     try {
       final response = await dio.post(
         'register?',
-        queryParameters: {
+        data: {
           'name': name,
           'email': email,
           'password': password,
           'phone': phone,
-        }
+        },
       );
       if (response.statusCode == 200) {
         return response.data;
       }
-    } catch (e) {
-    }
+    } catch (e) {}
     return {};
   }
 }
-

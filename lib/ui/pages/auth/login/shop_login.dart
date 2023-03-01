@@ -83,7 +83,7 @@ class ShopLogin extends StatelessWidget {
                       value: state.successModel.data?.token,
                     ).then(
                       (value) {
-                        Navigator.of(context).pushReplacementNamed("/");
+                        Navigator.of(context).pushReplacementNamed("home");
                       },
                     ),
                   );
@@ -136,6 +136,12 @@ class ShopLogin extends StatelessWidget {
                       fontWeight: FontWeight.w500,
                     ),
                   ),
+                  onTap: () {
+                    Navigator.pushNamed(
+                      context,
+                      "Register",
+                    );
+                  },
                 ),
               ],
             ),

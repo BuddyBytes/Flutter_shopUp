@@ -79,7 +79,7 @@ class ShopUp extends StatelessWidget {
           "Register": (context) {
             return const Register();
           },
-          "/": (context) {
+          "home": (context) {
             return const Layouts();
           },
           "Search": (context) {

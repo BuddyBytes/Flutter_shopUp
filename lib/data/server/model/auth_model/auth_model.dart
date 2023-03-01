@@ -19,3 +19,5 @@ class Data {
     token = dataJson?["token"];
   }
 }
+
+

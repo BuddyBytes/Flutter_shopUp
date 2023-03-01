@@ -25,3 +25,26 @@ class ErrorUserAuthState extends AuthState {
 class ErrorServerAuthState extends AuthState {}
 
 class ObscureTextAuthState extends AuthState {}
+
+// -----------------------------------------------------------------------------
+// registrations states
+
+class LoadingRegistrationAuthState extends AuthState {}
+
+class SuccessRegistrationAuthState extends AuthState {
+  AuthModel successModel;
+  SuccessRegistrationAuthState({
+    required this.successModel,
+  });
+}
+
+class ErrorRegistrationAuthState extends AuthState {
+  AuthModel successModel;
+  ErrorRegistrationAuthState({
+    required this.successModel,
+  });
+}
+
+class ErrorServerRegistrationAuthState extends AuthState {}
+// -----------------------------------------------------------------------------
+

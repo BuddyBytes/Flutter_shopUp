@@ -60,8 +60,42 @@ class AuthCubit extends Cubit<AuthState> {
     emit(EndAuthState());
   }
 
-  void changeTextState(bool textState) {
-    textState = !textState;
-    emit(ObscureTextAuthState());
+  void authregisterRequest({
+    required String email,
+    required String password,
+    required String name,
+    required String phone,
+  }) {
+    try {
+      emit(LoadingRegistrationAuthState());
+      AuthenticationApiCall.postRegisterData(
+        email: email,
+        password: password,
+        name: name,
+        phone: phone,
+      ).then(
+        (value) {
+          if (AuthModel.fromAuthResponse(value).message == null) {
+            emit(ErrorServerRegistrationAuthState());
+          } else {
+            if (AuthModel.fromAuthResponse(value).status == false) {
+              emit(
+                ErrorRegistrationAuthState(
+                  successModel: AuthModel.fromAuthResponse(
+                    value,
+                  ),
+                ),
+              );
+            } else {
+              emit(
+                SuccessRegistrationAuthState(
+                  successModel: AuthModel.fromAuthResponse(value),
+                ),
+              );
+            }
+          }
+        },
+      );
+    } catch (e) {}
   }
 }
