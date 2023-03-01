@@ -3,7 +3,6 @@
 import 'package:flutter/material.dart';
 import 'package:shopup/data/shared/preferences/preferences.dart';
 import 'package:shopup/ui/cubits/auth_cubit/auth_cubit.dart';
-import 'package:shopup/ui/pages/layout/layouts.dart';
 import 'package:shopup/ui/widgets/reusable_widgets.dart';
 import 'package:shopup/ui/style/colors.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -84,13 +83,7 @@ class ShopLogin extends StatelessWidget {
                       value: state.successModel.data?.token,
                     ).then(
                       (value) {
-                        Navigator.of(context).pushReplacement(
-                          MaterialPageRoute(
-                            builder: (context) {
-                              return const Layouts();
-                            },
-                          ),
-                        );
+                        Navigator.of(context).pushReplacementNamed("/");
                       },
                     ),
                   );

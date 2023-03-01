@@ -5,8 +5,6 @@ import 'package:shopup/ui/cubits/auth_cubit/auth_cubit.dart';
 import 'package:shopup/ui/style/colors.dart';
 import 'package:shopup/ui/widgets/reusable_widgets.dart';
 
-import '../../../auth/login/shop_login.dart';
-
 class Settings extends StatelessWidget {
   const Settings({super.key});
 
@@ -34,13 +32,9 @@ class Settings extends StatelessWidget {
               msgColor: ToastMessageColor.success.toastColor,
             ).then(
               (value) {
-                Navigator.of(context).pushAndRemoveUntil(
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return const ShopLogin();
-                    },
-                  ),
-                  (Route<dynamic> route) => false,
+                Navigator.of(context).pushNamedAndRemoveUntil(
+                  "login",
+                  (route) => false,
                 );
               },
             );
