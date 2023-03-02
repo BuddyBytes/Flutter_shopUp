@@ -9,11 +9,11 @@ A new Flutter project.
 
 ## Features
 
-. Secure authentication system with easy account creation and login functionality.
-. User-friendly interface to browse the latest products in the marketplace.
-. Search functionality to find a specific product quickly.
-. Effortlessly add products to your favorites list for quick access.
-. Seamless checkout process with various payment options.
+* Secure authentication system with easy account creation and login functionality.
+* User-friendly interface to browse the latest products in the marketplace.
+* Search functionality to find a specific product quickly.
+* Effortlessly add products to your favorites list for quick access.
+* Seamless checkout process with various payment options.
 
 ## Getting Started
 
@@ -22,7 +22,7 @@ Getting started with ShopUp is as easy as 1, 2, 3!
 1. Install Flutter on your system by following the official installation guide.
 2. Clone the ShopUp repository and navigate to the project directory.
 
-```shell
+```git
 $ git clone https://github.com/username/shopup.git
 $ cd shopup
 ```
