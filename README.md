@@ -22,7 +22,7 @@ Getting started with ShopUp is as easy as 1, 2, 3!
 1. Install Flutter on your system by following the official installation guide.
 2. Clone the ShopUp repository and navigate to the project directory.
 
-```git
+```bash
 $ git clone https://github.com/username/shopup.git
 $ cd shopup
 ```
