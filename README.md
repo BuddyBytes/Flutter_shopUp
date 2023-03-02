@@ -13,7 +13,7 @@ A new Flutter project.
 * User-friendly interface to browse the latest products in the marketplace.
 * Search functionality to find a specific product quickly.
 * Effortlessly add products to your favorites list for quick access.
-* Seamless checkout process with various payment options.
+* Seamless checkout process with various payment options. (comming soon)
 
 ## Getting Started
 
