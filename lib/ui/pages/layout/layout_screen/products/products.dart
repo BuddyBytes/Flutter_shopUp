@@ -5,8 +5,13 @@ class Products extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text("Products"),
+    return GridView.builder(
+      itemCount: 4,
+      gridDelegate:
+          const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+      itemBuilder: (item, index) {
+        return const Text("hello");
+      },
     );
   }
 }

@@ -24,15 +24,43 @@ class CachedPreference {
     }
   }
 
+  // static Future saveCollectionOfSharedPreferences({
+  //   required String key,
+  //   required List<String> values,
+  // }) async {
+  //   await sharedInstance.setStringList(
+  //     key,
+  //     values,
+  //   );
+  // }
+
   static dynamic getSharedData({
     required String key,
   }) {
     return sharedInstance.get(key);
   }
 
+  static dynamic getSharedDataCollection({
+    required String key,
+  }) {
+    return sharedInstance.getStringList(key);
+  }
+
   static Future clearKey({
     required String key,
   }) async {
     return await sharedInstance.remove(key);
+  }
+
+  static Future storeMultiplePreferences({
+    required dynamic email,
+    required dynamic name,
+    required dynamic phone,
+    required dynamic token,
+  }) async {
+    await sharedInstance.setString("email", email);
+    await sharedInstance.setString("name", name);
+    await sharedInstance.setString("phone", phone);
+    await sharedInstance.setString("token", token);
   }
 }

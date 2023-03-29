@@ -59,4 +59,9 @@ class AuthenticationApiCall {
     } catch (e) {}
     return {};
   }
+
+  static Future<Map<String, dynamic>> getProducts() async {
+    final response = await dio.get("products");
+    return response.data;
+  }
 }

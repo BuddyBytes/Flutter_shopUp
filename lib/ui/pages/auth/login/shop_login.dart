@@ -80,9 +80,11 @@ class ShopLogin extends StatelessWidget {
                     "${state.successModel.message}",
                     msgColor: ToastMessageColor.success.toastColor,
                   ).then(
-                    (value) => CachedPreference.savePreferenceData(
-                      key: "token",
-                      value: state.successModel.data?.token,
+                    (value) => CachedPreference.storeMultiplePreferences(
+                      email: state.successModel.data?.email,
+                      name: state.successModel.data?.name,
+                      phone: state.successModel.data?.phone,
+                      token: state.successModel.data?.token,
                     ).then(
                       (value) {
                         Navigator.of(context).pushReplacementNamed("home");

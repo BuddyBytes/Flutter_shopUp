@@ -4,6 +4,7 @@ import 'package:shopup/ui/style/colors.dart';
 // import 'package:shopup/ui/pages/onboarding_screen/onboarding.dart';
 import 'package:shopup/ui/widgets/reusable_widgets.dart';
 
+import '../../../../../data/shared/preferences/preferences.dart';
 import '../../../../cubits/auth_cubit/auth_cubit.dart';
 
 class Settings extends StatelessWidget {
@@ -32,7 +33,7 @@ class Settings extends StatelessWidget {
             false,
             isEnabled: false,
             showSuffixIcon: false,
-            hintText: "${AuthCubit.get(context).registerModel?.data?.email}",
+            hintText: CachedPreference.getSharedData(key: "email"),
             formController: emailController,
             formIcon: const Icon(Icons.email_outlined),
           ),
@@ -43,10 +44,10 @@ class Settings extends StatelessWidget {
             false,
             isEnabled: false,
             showSuffixIcon: false,
-            hintText: "${AuthCubit.get(context).registerModel?.data?.name}",
+            hintText: CachedPreference.getSharedData(key: "name"),
             formController: nameController,
             formIcon: const Icon(
-              Icons.lock_outline,
+              Icons.verified_user,
             ),
           ),
           const SizedBox(
@@ -69,7 +70,7 @@ class Settings extends StatelessWidget {
             false,
             isEnabled: false,
             showSuffixIcon: false,
-            hintText: "${AuthCubit.get(context).registerModel?.data?.phone}",
+            hintText: CachedPreference.getSharedData(key: "phone"),
             formController: phoneController,
             formIcon: const Icon(
               Icons.phone,
